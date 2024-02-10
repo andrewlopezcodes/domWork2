@@ -32,13 +32,13 @@ let addToUnorderedList = function(){
   randomNumberGenerator();
   let createListItem = document.createElement("li");
   createListItem.appendChild(document.createTextNode(selectTheInputField.value));
-  console.log("The new list item value of input is: "+ selectTheInputField.value);
+  console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
   selectTheInputField.value = "";
   findChildNumber();
   collectionOfListItems = document.querySelectorAll("li");
   listDepth = collectionOfListItems.length;
-  console.log("The new list item " + listDepth + " list item.");
+  console.log("There is a list length of " + listDepth);
   findChildNumber();
   listDepthIndex = listDepth - 1;
   console.log("The new list item has an index of " + listDepthIndex);
