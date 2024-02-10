@@ -24,6 +24,10 @@ let addIdNumber = function(){
 
 let addDeleteButton = function(){
   createButton = document.createElement("button");
+  createButton.setAttribute("type", "delete");
+  createButton.setAttribute("id", idNumber);
+
+
 };
 
 let createSpanElement = function(){
@@ -33,13 +37,13 @@ let createSpanElement = function(){
 
 let addToUnorderedList = function(){
   randomNumberGenerator();
-  createSpanElement();
+  addDeleteButton();
   let createListItem = document.createElement("li");
-  createListItem.appendChild(document.createTextNode(selectTheInputField.value));
+  createListItem.appendChild(document.createTextNode(selectTheInputField.value + "    "));
   console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
-  createListItem.insertAdjacentElement('beforeend', createSpan);
-  //insert a function to add a span to the list item
+  createListItem.setAttribute("id", idNumber);
+  createListItem.insertAdjacentElement('beforeend', createButton);
   selectTheInputField.value = "";
   collectionOfListItems = document.querySelectorAll("li");
   listDepth = collectionOfListItems.length;
