@@ -6,6 +6,8 @@ let collectionOfListItems;
 var listDepth;
 var childNumber;
 var listDepthIndex;
+let createButton;
+let createSpan;
 
 let randomNumberGenerator = function(){
   let randomNumber = Math.random();
@@ -20,12 +22,24 @@ let addIdNumber = function(){
   };
 };
 
+let addDeleteButton = function(){
+  createButton = document.createElement("button");
+};
+
+let createSpanElement = function(){
+  createSpan = document.createElement("span");
+};
+
+
 let addToUnorderedList = function(){
   randomNumberGenerator();
+  createSpanElement();
   let createListItem = document.createElement("li");
   createListItem.appendChild(document.createTextNode(selectTheInputField.value));
   console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
+  createListItem.insertAdjacentElement('beforeend', createSpan);
+  //insert a function to add a span to the list item
   selectTheInputField.value = "";
   collectionOfListItems = document.querySelectorAll("li");
   listDepth = collectionOfListItems.length;
