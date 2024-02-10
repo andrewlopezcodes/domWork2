@@ -14,14 +14,6 @@ let randomNumberGenerator = function(){
   console.log("The new list item has an ID# of " + idNumber);
 };
 
-let findChildNumber = function(){
-  if(listDepth > 0){
-    childNumber = listDepth -1; 
-  } else {
-    childNumber = 0;
-  };
-};
-
 let addIdNumber = function(){
   if(childNumber === listDepth - 1){
 
@@ -35,11 +27,9 @@ let addToUnorderedList = function(){
   console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
   selectTheInputField.value = "";
-  findChildNumber();
   collectionOfListItems = document.querySelectorAll("li");
   listDepth = collectionOfListItems.length;
   console.log("There is a list length of " + listDepth);
-  findChildNumber();
   listDepthIndex = listDepth - 1;
   console.log("The new list item has an index of " + listDepthIndex);
 };
