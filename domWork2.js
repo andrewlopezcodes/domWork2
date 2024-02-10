@@ -1,6 +1,7 @@
 var selectTheInputField = document.querySelector("input");
-var selectTheButton = document.querySelector("button");
+var selectTheSubmitButton = document.getElementById("submit");
 var selectTheUnorderedList = document.querySelector("ul");
+let selectTheDeleteButton = document.getElementsByClassName("delete");
 var idNumber;
 let collectionOfListItems;
 var listDepth;
@@ -8,6 +9,8 @@ var childNumber;
 var listDepthIndex;
 let createButton;
 let createSpan;
+let deleteButtonId;
+
 
 let randomNumberGenerator = function(){
   let randomNumber = Math.random();
@@ -24,10 +27,8 @@ let addIdNumber = function(){
 
 let addDeleteButton = function(){
   createButton = document.createElement("button");
-  createButton.setAttribute("type", "delete");
+  createButton.setAttribute("class", "delete");
   createButton.setAttribute("id", idNumber);
-
-
 };
 
 let createSpanElement = function(){
@@ -52,6 +53,23 @@ let addToUnorderedList = function(){
   console.log("The new list item has an index of " + listDepthIndex);
 };
 
-selectTheButton.addEventListener("click", addToUnorderedList);
+let getIdOfDeleteButton = function(){
+  // if(){};
+  deleteButtonId = selectTheButton.getAttribute("id");
+     
+};
+
+
+// let deleteListItem = function(){
+//   let gatherAllIds = document.querySelectorAll()
+// };
+
+selectTheSubmitButton.addEventListener("click", addToUnorderedList);
+
+
+
+
+
+
 
 
