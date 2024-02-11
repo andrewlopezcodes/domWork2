@@ -1,70 +1,41 @@
 var selectTheInputField = document.querySelector("input");
 var selectTheSubmitButton = document.getElementById("submit");
 var selectTheUnorderedList = document.querySelector("ul");
-let selectTheDeleteButton = document.getElementsByClassName("delete");
-var idNumber;
-let collectionOfListItems;
-var listDepth;
-var childNumber;
-var listDepthIndex;
-let createButton;
-let createSpan;
-let deleteButtonId;
+var selectListItems = document.querySelectorAll("li");
 
 
-let randomNumberGenerator = function(){
-  let randomNumber = Math.random();
-  let madeToString = randomNumber.toString();
-  idNumber = madeToString.slice(3, 9);
-  console.log("The new list item has an ID# of " + idNumber);
-};
 
-let addIdNumber = function(){
-  if(childNumber === listDepth - 1){
 
-  };
-};
-
-let addDeleteButton = function(){
-  createButton = document.createElement("button");
-  createButton.setAttribute("class", "delete");
-  createButton.setAttribute("id", idNumber);
-};
-
-let createSpanElement = function(){
-  createSpan = document.createElement("span");
-};
 
 
 let addToUnorderedList = function(){
-  randomNumberGenerator();
-  addDeleteButton();
+  let createButton;
   let createListItem = document.createElement("li");
+  
+  let addDeleteButton = function(){
+    createButton = document.createElement("button");
+    createButton.setAttribute("class", "delete");
+    createButton.innerText = "Delete";
+  };
+    
   createListItem.appendChild(document.createTextNode(selectTheInputField.value + "    "));
   console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
-  createListItem.setAttribute("id", idNumber);
+  addDeleteButton();
   createListItem.insertAdjacentElement('beforeend', createButton);
+  //delete button functionality
+  createButton.addEventListener("click", function(){
+    createListItem.parentNode.removeChild(createListItem);
+  });
+  
   selectTheInputField.value = "";
-  collectionOfListItems = document.querySelectorAll("li");
-  listDepth = collectionOfListItems.length;
-  console.log("There is a list length of " + listDepth);
-  listDepthIndex = listDepth - 1;
-  console.log("The new list item has an index of " + listDepthIndex);
-};
+}
 
-let getIdOfDeleteButton = function(){
-  // if(){};
-  deleteButtonId = selectTheButton.getAttribute("id");
-     
-};
-
-
-// let deleteListItem = function(){
-//   let gatherAllIds = document.querySelectorAll()
-// };
 
 selectTheSubmitButton.addEventListener("click", addToUnorderedList);
+
+
+
 
 
 
