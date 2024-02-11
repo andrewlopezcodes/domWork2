@@ -59,8 +59,22 @@ let addToUnorderedList = function(){
   selectTheInputField.value = "";
 }
 
+let ifEnterKeyIsPressed = function(onkeydown){
+  if(onkeydown.key === "Enter" && selectTheInputField.value.length > 0 ){
+      addToUnorderedList();
+  };
+};
 
-selectTheSubmitButton.addEventListener("click", addToUnorderedList);
+let ifAddToListIsPressed = function(){
+  if(selectTheInputField.value.length > 0){
+    addToUnorderedList();
+  };
+};
+
+
+
+selectTheInputField.addEventListener("keydown", ifEnterKeyIsPressed);
+selectTheSubmitButton.addEventListener("click", ifAddToListIsPressed);
 
 
 // written by @andrewlopezcodes
