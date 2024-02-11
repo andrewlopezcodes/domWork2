@@ -56,10 +56,11 @@ let addToUnorderedList = function(){
     createDoneButton.innerText = "Done";
 
   });
-
-
   selectTheInputField.value = "";
 }
 
 
 selectTheSubmitButton.addEventListener("click", addToUnorderedList);
+
+
+// written by @andrewlopezcodes
