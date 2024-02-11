@@ -30,7 +30,7 @@ let addToUnorderedList = function(){
   addDeleteButton();
   randomNumberGenerator();
   createListItem.setAttribute("id", idNumber);
-  createListItem.insertAdjacentElement('beforeend', createButton);
+  createListItem.insertAdjacentElement('afterbegin', createButton);
   //delete button functionality
   createButton.addEventListener("click", function(){
     createListItem.parentNode.removeChild(createListItem);
