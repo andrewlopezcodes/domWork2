@@ -4,10 +4,6 @@ var selectTheUnorderedList = document.querySelector("ul");
 var selectListItems = document.querySelectorAll("li");
 
 
-
-
-
-
 let addToUnorderedList = function(){
   let createButton;
   let createListItem = document.createElement("li");
@@ -27,20 +23,9 @@ let addToUnorderedList = function(){
   createButton.addEventListener("click", function(){
     createListItem.parentNode.removeChild(createListItem);
   });
-  
+
   selectTheInputField.value = "";
 }
 
 
 selectTheSubmitButton.addEventListener("click", addToUnorderedList);
-
-
-
-
-
-
-
-
-
-
-
