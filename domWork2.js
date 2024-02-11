@@ -5,14 +5,20 @@ var selectListItems = document.querySelectorAll("li");
 
 
 let addToUnorderedList = function(){
-  let createButton;
+  let createDeleteButton;
+  let createDoneButton;
   let idNumber;
   let createListItem = document.createElement("li");
   
   let addDeleteButton = function(){
-    createButton = document.createElement("button");
-    createButton.setAttribute("class", "delete");
-    createButton.innerText = "Delete";
+    createDeleteButton = document.createElement("button");
+    createDeleteButton.setAttribute("class", "delete");
+    createDeleteButton.innerText = "Delete";
+  };
+
+  let addDoneButton = function(){
+    createDoneButton = document.createElement("button");
+    createDoneButton.innerText = "Done";
   };
 
   let randomNumberGenerator = function(){
@@ -28,13 +34,29 @@ let addToUnorderedList = function(){
   console.log("The new list item has an input value of: " + selectTheInputField.value);
   selectTheUnorderedList.appendChild(createListItem);
   addDeleteButton();
+  addDoneButton();
   randomNumberGenerator();
   createListItem.setAttribute("id", idNumber);
-  createListItem.insertAdjacentElement('afterbegin', createButton);
+  createListItem.setAttribute("class", "");
+  createListItem.insertAdjacentElement('afterbegin', createDeleteButton);
+  createListItem.insertAdjacentElement('afterbegin', createDoneButton);
+  
   //delete button functionality
-  createButton.addEventListener("click", function(){
+  createDeleteButton.addEventListener("click", function(){
     createListItem.parentNode.removeChild(createListItem);
   });
+
+  //done button functionality
+  createDoneButton.addEventListener("click", function(){
+    createListItem.setAttribute("class","done");
+    createDoneButton.innerText = "2click to Un-Done";
+  });
+  createDoneButton.addEventListener("dblclick", function(){
+    createListItem.removeAttribute("class");
+    createDoneButton.innerText = "Done";
+
+  });
+
 
   selectTheInputField.value = "";
 }
